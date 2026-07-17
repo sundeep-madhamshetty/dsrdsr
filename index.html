@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSR Cookie Test</title>
+    
+    <script>
+        document.cookie = "myCookie=myCookieValue";
+        document.cookie = "__ga=test__ga";
+        document.cookie = "_ga=test_ga"; 
+        document.cookie = "_ga_1230=1230";
+        document.cookie = "_ga_1231=1231";
+        document.cookie = "_ga_1232=1232";
+        document.cookie = "_ga_1233=1233";
+        document.cookie = "_ga_1234=1234";
+        document.cookie = "_ga_1235=1235";
+        document.cookie = "_ga_1236=1236";
+        document.cookie = "_ga_1237=1237";
+        document.cookie = "_ga_1238=1238";
+        document.cookie = "_ga_1239=1239";
+        document.cookie = "_ram_1230=1230";
+        document.cookie = "_ram_1231=1231";
+        document.cookie = "_ram_1232=1232";
+        document.cookie = "_ram_1233=1233";
+        document.cookie = "_ram_1234=1234";
+        document.cookie = "_ram_1235=1235";
+        document.cookie = "_ram_1236=1236";
+        document.cookie = "_ram_1237=1237";
+        document.cookie = "_ram_1238=1238";
+        document.cookie = "_ram_1239=1239";
+        document.cookie = "kb4_1230=1230";
+        document.cookie = "kb4_1231=1231";
+        document.cookie = "kb4_1232=1232";
+        document.cookie = "kb4_1233=1233";
+        document.cookie = "kb4_1234=1234";
+        document.cookie = "kb4_1235=1235";
+        document.cookie = "kb4_1236=1236";
+        document.cookie = "kb4_1237=1237";
+        document.cookie = "kb4_1238=1238";
+        document.cookie = "kb4_1239=1239";
+        document.cookie = "1235_ram=1235";
+        document.cookie = "1236_ram=1236";
+        document.cookie = "1237_ram=1237";
+        document.cookie = "1238_ram=1238";
+        document.cookie = "1239_ram=1239";
+    </script>
+
+
+
+
+</head>
+<body>
+
+    <h1>DSR Test Page</h1>
+    <p>Status: Hello World abcd</p>
+
+    <button class="cmp-revoke-consent">Revoke Consent</button>
+
+    <hr>
+
+    <div style="width: 100%; margin-top: 20px;">
+        <iframe 
+            src="https://dsp-qa.securiti.xyz/notice-embed/ea6e1a4c-37a7-4073-86f2-44ebcc3f086f" 
+            style="border: none; width: 100%; height: 800px;"
+            title="DSR Form">
+        </iframe>
+    </div>
+
+// Add this script just before </body> tag
+<script>
+window.addEventListener('message', (event) => {
+    if (event.data.sec_signal_identifier === 'sec-dsr-submission-success') {
+        // Process message
+        if (window.SecuritiSDK && bannerGenerator && (event.data.sec_dsr_data.ticket_type||[]).includes('do-not-sell')) {
+            bannerGenerator.setDoNotSellConsent()
+        }
+    }
+});
+</script>
+    
+</body>
+</html>
+
+
