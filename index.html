@@ -46,13 +46,14 @@
         document.cookie = "1239_ram=1239";
     </script>
 
+
 <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
 <script>
 (function () {
 	var s = document.createElement('script');
 	s.src = 'https://cdn-qa.securiti.xyz/consent/cookie-consent-sdk-loader.js';
 	s.setAttribute('data-tenant-uuid', '6b031bf6-12f5-441d-8a08-b39a8c678bf8');
-	s.setAttribute('data-domain-uuid', '89bec192-16f8-4eb5-aec0-c05dbe4d9a58');
+	s.setAttribute('data-domain-uuid', 'fc1f8ce3-bc33-42c7-9985-9e73c860c58e');
 	s.setAttribute('data-backend-url', 'https://qa.securiti.xyz');
 	s.setAttribute('data-skip-css', 'false');
 	s.defer = true;
@@ -60,7 +61,6 @@
 	parent_node.appendChild(s);
 })()
 </script>
-
 
 </head>
 <body>
